@@ -5,44 +5,34 @@
 body {
     font-family: Helvetica, Arial;
     margin: 0;
-    background-color: #ffeff5;
+    /* --- MODIFICATION START --- */
+    /* 移除原始背景颜色，设置为透明 */
+    background-color: transparent !important; 
+    overflow: hidden; /* 防止页面出现滚动条 */
+    /* --- MODIFICATION END --- */
 }
 
 #dowebok {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    left: 0;
-    width: 430px;
+    /* --- MODIFICATION START --- */
+    /* 移除绝对定位和自动居中，让其内容填充 iframe */
+    position: static; /* 或者直接删除这三行，让其自然流淌 */
+    top: auto;
+    right: auto;
+    left: auto;
+    margin: 0; /* 移除自动外边距 */
+    /* 保持播放器本身的固定尺寸 */
+    width: 430px; 
     height: 100px;
-    margin: -4px auto;
+    /* --- MODIFICATION END --- */
 }
 
-#bg-artwork {
-    position: fixed;
-    top: -30px;
-    right: -30px;
-    bottom: -30px;
-    left: -30px;
-    background-image: url(../images/1.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
-    filter: blur(40px);
-    -webkit-filter: blur(40px);
-    z-index: 1;
-}
-
+/* --- MODIFICATION START --- */
+/* 隐藏原始的背景图和背景层 */
+#bg-artwork,
 #bg-layer {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #fff;
-    opacity: 0.51;
-    z-index: 2;
+    display: none !important;
 }
+/* --- MODIFICATION END --- */
 
 #player {
     position: relative;
@@ -56,7 +46,7 @@ body {
     right: 15px;
     left: 15px;
     padding: 13px 22px 10px 184px;
-    background-color: #fff7f7;
+    background-color: #fff7f7; /* 播放器信息区域的背景色，保留 */
     border-radius: 15px 15px 0 0;
     transition: 0.3s ease top;
     z-index: 1;
@@ -159,7 +149,7 @@ body {
 #player-content {
     position: relative;
     height: 100%;
-    background-color: #fff;
+    background-color: #fff; /* 播放器主体内容的背景色，保留 */
     box-shadow: 0 30px 80px #656565;
     border-radius: 15px;
     z-index: 2;
@@ -327,30 +317,10 @@ body {
     color: #fff;
 }
 
-#follow-me-link {
-    top: 10px;
-    font-size: 13px;
-    padding: 5px 7px;
-    background-color: #f86d92;
-    border-radius: 2px;
-}
-
-#share-link {
-    top: 45px;
-    width: 16px;
-    height: 16px;
-    padding: 10px;
-    font-size: 16px;
-    background-color: #7dca24;
-    border-radius: 50%;
-}
-
+/* --- MODIFICATION START --- */
+/* 隐藏原始播放器页面上的外部链接/按钮 */
 #follow-me-link,
 #share-link {
-    position: fixed;
-    right: 10px;
-    color: #fff;
-    text-align: center;
-    text-decoration: none;
-    z-index: 125;
+    display: none !important;
 }
+/* --- MODIFICATION END --- */
