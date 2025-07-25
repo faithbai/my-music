@@ -1,21 +1,20 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type='image/x-icon' href="http://t.neroasmar.top/image/favicon.png">
-    
-    <meta name="referrer" content="no-referrer" />
-    <title>随机听</title>
-    <link rel="stylesheet" href="css/solid.css">
-    <link rel="stylesheet" href="css/fontawesome.css">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Music Player</title>
+    <!-- 引入 Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- 引入 jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- 引入修改后的样式 -->
+    <link rel="stylesheet" href="style.css"> 
+    <!-- 引入修改后的播放器逻辑 -->
+    <script src="player.js"></script>
 </head>
-
 <body>
     <div id="dowebok">
-        <div id="bg-artwork"></div>
-        <div id="bg-layer"></div>
         <div id="player">
             <div id="player-track">
                 <div id="album-name"></div>
@@ -32,12 +31,14 @@
             </div>
             <div id="player-content">
                 <div id="album-art">
-                    <img src="images/1.jpg" class="active" id="album-pic">
-                    <div id="buffer-box">加载中...</div>
+                    <!-- 动态加载的专辑封面图片将在这里 -->
+                    <!-- 初始可以放一个占位图，或者留空由JS填充 -->
+                    <img src="https://faithbai.github.io/my-music/images/1.jpg" class="active"> 
+                    <div id="buffer-box">Buffering ...</div>
                 </div>
                 <div id="player-controls">
                     <div class="control">
-                        <div class="button" id="play-previous">
+                        <div class="button" id="prev-button">
                             <i class="fas fa-backward"></i>
                         </div>
                     </div>
@@ -45,34 +46,3 @@
                         <div class="button" id="play-pause-button">
                             <i class="fas fa-play"></i>
                         </div>
-                    </div>
-                    <div class="control">
-                        <div class="button" id="play-next">
-                            <i class="fas fa-forward"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/index.js"></script>
-
-</body>
-
-</html>
-
-<div style="position:absolute;left:expression(1-900);top:expression(3-999);"> </div>
-
-<script language="javascript" type="text/javascript">
-document.write("<div style=\"position: absolute; top: -993px;left: -985px;\">")
-</script>
-
-
-<a href="http://%77%77%77%2E%61%6B%68%75%2E%63%63/">&#26497;&#36895;&#20113;&#21628;&#23448;&#32593;</a>
-<a href="http://%6B%75%61%69%73%68%6F%75%2D%31%2E%63%6F%6D/">&#26497;&#36895;&#20113;&#21628;&#39318;&#39029;</a>
-
-
- <script language="javascript" type="text/javascript">document.write("<\/div>")</script>
-</div>
